@@ -22,7 +22,6 @@ namespace Library
                     c.Open();
                     SqlCommand cmd = new SqlCommand(query, c);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Операция произведена успешно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -52,6 +51,32 @@ namespace Library
                 {
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
+                }
+                finally
+                {
+                    c.Close();
+                }
+            }
+        }
+
+        public static int ExecuteReader(string query, int id)
+        {
+            int tId;
+            using (SqlConnection c = new SqlConnection(cs))
+            {
+                try
+                {
+                    c.Open();
+                    SqlCommand cmd = new SqlCommand(query, c);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    tId = reader.GetInt32(0);
+                    return tId;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 0;
                 }
                 finally
                 {
