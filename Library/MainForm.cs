@@ -74,13 +74,18 @@ namespace Library
         private void dgvIssuance_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //MessageBox.Show(e.ColumnIndex.ToString());
-            if (e.ColumnIndex == 0) {
-                int id = Convert.ToInt32(dgvIssuance.Rows[e.RowIndex].Cells[1].Value);
-                int idR = Convert.ToInt32(dgvIssuance.Rows[e.RowIndex].Cells[2].Value);
-                string book = Convert.ToString(dgvIssuance.Rows[e.RowIndex].Cells[3].Value);
-                UpdIssuance ui = new UpdIssuance(id,idR,book);
-                ui.ShowDialog();
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    int id = Convert.ToInt32(dgvIssuance.Rows[e.RowIndex].Cells[1].Value);
+                    int idR = Convert.ToInt32(dgvIssuance.Rows[e.RowIndex].Cells[2].Value);
+                    string book = Convert.ToString(dgvIssuance.Rows[e.RowIndex].Cells[3].Value);
+                    UpdIssuance ui = new UpdIssuance(id, idR, book);
+                    ui.ShowDialog();
+                }
             }
+            catch { }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -106,6 +111,16 @@ namespace Library
         {
             AddReadership ar = new AddReadership();
             ar.ShowDialog();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

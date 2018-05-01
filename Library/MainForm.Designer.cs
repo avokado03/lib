@@ -44,12 +44,12 @@
             this.cbBook = new System.Windows.Forms.ComboBox();
             this.cbReader = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUpd = new System.Windows.Forms.Button();
+            this.bntRefresh = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnReadersheep = new System.Windows.Forms.Button();
+            this.btnBook = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnAddReader = new System.Windows.Forms.Button();
-            this.btnAddBooks = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuance)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -232,12 +232,12 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnUpd, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnExit, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnInfo, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnExit, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.bntRefresh, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnReport, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnAddReader, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnAddBooks, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnReadersheep, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnBook, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(363, 250);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -249,89 +249,107 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 242);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // btnUpd
+            // bntRefresh
             // 
-            this.btnUpd.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.btnUpd.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpd.Location = new System.Drawing.Point(3, 3);
-            this.btnUpd.Name = "btnUpd";
-            this.btnUpd.Size = new System.Drawing.Size(171, 74);
-            this.btnUpd.TabIndex = 10;
-            this.btnUpd.Text = "Обновить операции";
-            this.btnUpd.UseVisualStyleBackColor = false;
-            this.btnUpd.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
-            this.btnExit.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExit.Location = new System.Drawing.Point(180, 163);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(171, 74);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Выход";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.btnInfo.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnInfo.Location = new System.Drawing.Point(3, 163);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(171, 74);
-            this.btnInfo.TabIndex = 7;
-            this.btnInfo.Text = "Справка";
-            this.btnInfo.UseVisualStyleBackColor = false;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.bntRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntRefresh.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.bntRefresh.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonBlue", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.bntRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bntRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bntRefresh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bntRefresh.Location = new System.Drawing.Point(3, 3);
+            this.bntRefresh.Name = "bntRefresh";
+            this.bntRefresh.Size = new System.Drawing.Size(171, 74);
+            this.bntRefresh.TabIndex = 5;
+            this.bntRefresh.Text = "Обновить операции";
+            this.bntRefresh.UseVisualStyleBackColor = false;
+            this.bntRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnReport
             // 
+            this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReport.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
             this.btnReport.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReport.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReport.Location = new System.Drawing.Point(180, 3);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(171, 74);
-            this.btnReport.TabIndex = 8;
+            this.btnReport.Size = new System.Drawing.Size(172, 74);
+            this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Отчет";
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // btnAddReader
+            // btnReadersheep
             // 
-            this.btnAddReader.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
-            this.btnAddReader.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnAddReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddReader.Location = new System.Drawing.Point(3, 83);
-            this.btnAddReader.Name = "btnAddReader";
-            this.btnAddReader.Size = new System.Drawing.Size(171, 74);
-            this.btnAddReader.TabIndex = 6;
-            this.btnAddReader.Text = "Читатели";
-            this.btnAddReader.UseVisualStyleBackColor = false;
-            this.btnAddReader.Click += new System.EventHandler(this.btnAddReader_Click);
+            this.btnReadersheep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReadersheep.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
+            this.btnReadersheep.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnReadersheep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadersheep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReadersheep.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReadersheep.Location = new System.Drawing.Point(3, 83);
+            this.btnReadersheep.Name = "btnReadersheep";
+            this.btnReadersheep.Size = new System.Drawing.Size(171, 74);
+            this.btnReadersheep.TabIndex = 7;
+            this.btnReadersheep.Text = "Читательские билеты";
+            this.btnReadersheep.UseVisualStyleBackColor = false;
+            this.btnReadersheep.Click += new System.EventHandler(this.btnAddReader_Click);
             // 
-            // btnAddBooks
+            // btnBook
             // 
-            this.btnAddBooks.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.btnAddBooks.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnAddBooks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddBooks.Location = new System.Drawing.Point(180, 83);
-            this.btnAddBooks.Name = "btnAddBooks";
-            this.btnAddBooks.Size = new System.Drawing.Size(171, 74);
-            this.btnAddBooks.TabIndex = 5;
-            this.btnAddBooks.Text = "Книги";
-            this.btnAddBooks.UseVisualStyleBackColor = false;
-            this.btnAddBooks.Click += new System.EventHandler(this.btnAddBooks_Click);
+            this.btnBook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBook.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.btnBook.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonBlue", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBook.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBook.Location = new System.Drawing.Point(180, 83);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(172, 74);
+            this.btnBook.TabIndex = 8;
+            this.btnBook.Text = "Книги";
+            this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnAddBooks_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
+            this.btnExit.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExit.Location = new System.Drawing.Point(180, 163);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(172, 76);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Выход";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInfo.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.btnInfo.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonBlue", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnInfo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnInfo.Location = new System.Drawing.Point(3, 163);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(171, 76);
+            this.btnInfo.TabIndex = 10;
+            this.btnInfo.Text = "Справка";
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // MainForm
             // 
@@ -344,6 +362,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Библиотека";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuance)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -365,14 +384,14 @@
         private System.Windows.Forms.ComboBox cbBook;
         private System.Windows.Forms.ComboBox cbReader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAddBooks;
-        private System.Windows.Forms.Button btnAddReader;
-        private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpB;
-        private System.Windows.Forms.Button btnUpd;
+        private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button bntRefresh;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnReadersheep;
+        private System.Windows.Forms.Button btnBook;
     }
 }

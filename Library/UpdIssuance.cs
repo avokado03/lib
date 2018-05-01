@@ -34,6 +34,10 @@ namespace Library
                 ", id_booksInfo = "+Convert.ToInt32(cbBook.SelectedValue)+", BDate = '" + dtpB.Value
                 + "', EDate = '" + dtpE.Value + "', Status = '" + cbStatus.Text + "' where id_issuanceBooks =" + id;
             Queries.ExecuteNonQuery(query);
+            if (cbStatus.SelectedIndex == 1) {
+                string returnBook = "update booksInfo set Count = Count+1 where id_booksInfo=" + Convert.ToInt32(cbBook.SelectedValue);
+                Queries.ExecuteNonQuery(returnBook);
+            }
             MessageBox.Show("Операция произведена успешно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
