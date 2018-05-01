@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvIssuance = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,16 +40,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnIssuance = new System.Windows.Forms.Button();
             this.dtpE = new System.Windows.Forms.DateTimePicker();
+            this.dtpB = new System.Windows.Forms.DateTimePicker();
             this.cbBook = new System.Windows.Forms.ComboBox();
             this.cbReader = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddBooks = new System.Windows.Forms.Button();
-            this.btnAddReader = new System.Windows.Forms.Button();
+            this.btnUpd = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.dtpB = new System.Windows.Forms.DateTimePicker();
-            this.btnUpd = new System.Windows.Forms.Button();
+            this.btnAddReader = new System.Windows.Forms.Button();
+            this.btnAddBooks = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuance)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -79,14 +80,14 @@
             this.dgvIssuance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIssuance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvIssuance.BackgroundColor = global::Library.Properties.Settings.Default.ButtonRed;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIssuance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIssuance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIssuance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvIssuance, 2);
             this.dgvIssuance.DataBindings.Add(new System.Windows.Forms.Binding("BackgroundColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -95,14 +96,14 @@
             this.dgvIssuance.MultiSelect = false;
             this.dgvIssuance.Name = "dgvIssuance";
             this.dgvIssuance.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIssuance.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIssuance.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIssuance.RowHeadersVisible = false;
             this.dgvIssuance.Size = new System.Drawing.Size(715, 241);
             this.dgvIssuance.TabIndex = 0;
@@ -193,6 +194,17 @@
             this.dtpE.Size = new System.Drawing.Size(298, 20);
             this.dtpE.TabIndex = 3;
             // 
+            // dtpB
+            // 
+            this.dtpB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpB.CalendarTitleBackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.dtpB.DataBindings.Add(new System.Windows.Forms.Binding("CalendarTitleBackColor", global::Library.Properties.Settings.Default, "ButtonBlue", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.dtpB.Location = new System.Drawing.Point(51, 104);
+            this.dtpB.Name = "dtpB";
+            this.dtpB.Size = new System.Drawing.Size(299, 20);
+            this.dtpB.TabIndex = 2;
+            // 
             // cbBook
             // 
             this.cbBook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -237,32 +249,33 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 242);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // btnAddBooks
+            // btnUpd
             // 
-            this.btnAddBooks.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.btnAddBooks.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnAddBooks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddBooks.Location = new System.Drawing.Point(180, 83);
-            this.btnAddBooks.Name = "btnAddBooks";
-            this.btnAddBooks.Size = new System.Drawing.Size(171, 74);
-            this.btnAddBooks.TabIndex = 5;
-            this.btnAddBooks.Text = "Добавить книгу";
-            this.btnAddBooks.UseVisualStyleBackColor = false;
-            this.btnAddBooks.Click += new System.EventHandler(this.btnAddBooks_Click);
+            this.btnUpd.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.btnUpd.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpd.Location = new System.Drawing.Point(3, 3);
+            this.btnUpd.Name = "btnUpd";
+            this.btnUpd.Size = new System.Drawing.Size(171, 74);
+            this.btnUpd.TabIndex = 10;
+            this.btnUpd.Text = "Обновить операции";
+            this.btnUpd.UseVisualStyleBackColor = false;
+            this.btnUpd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAddReader
+            // btnExit
             // 
-            this.btnAddReader.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
-            this.btnAddReader.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnAddReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddReader.Location = new System.Drawing.Point(3, 83);
-            this.btnAddReader.Name = "btnAddReader";
-            this.btnAddReader.Size = new System.Drawing.Size(171, 74);
-            this.btnAddReader.TabIndex = 6;
-            this.btnAddReader.Text = "Добавить читателя";
-            this.btnAddReader.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
+            this.btnExit.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExit.Location = new System.Drawing.Point(180, 163);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(171, 74);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Выход";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnInfo
             // 
@@ -292,44 +305,33 @@
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // btnExit
+            // btnAddReader
             // 
-            this.btnExit.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
-            this.btnExit.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExit.Location = new System.Drawing.Point(180, 163);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(171, 74);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Выход";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnAddReader.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
+            this.btnAddReader.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddReader.Location = new System.Drawing.Point(3, 83);
+            this.btnAddReader.Name = "btnAddReader";
+            this.btnAddReader.Size = new System.Drawing.Size(171, 74);
+            this.btnAddReader.TabIndex = 6;
+            this.btnAddReader.Text = "Читатели";
+            this.btnAddReader.UseVisualStyleBackColor = false;
+            this.btnAddReader.Click += new System.EventHandler(this.btnAddReader_Click);
             // 
-            // dtpB
+            // btnAddBooks
             // 
-            this.dtpB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpB.CalendarTitleBackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.dtpB.DataBindings.Add(new System.Windows.Forms.Binding("CalendarTitleBackColor", global::Library.Properties.Settings.Default, "ButtonBlue", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dtpB.Location = new System.Drawing.Point(51, 104);
-            this.dtpB.Name = "dtpB";
-            this.dtpB.Size = new System.Drawing.Size(299, 20);
-            this.dtpB.TabIndex = 2;
-            // 
-            // btnUpd
-            // 
-            this.btnUpd.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
-            this.btnUpd.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpd.Location = new System.Drawing.Point(3, 3);
-            this.btnUpd.Name = "btnUpd";
-            this.btnUpd.Size = new System.Drawing.Size(171, 74);
-            this.btnUpd.TabIndex = 10;
-            this.btnUpd.Text = "Обновить операции";
-            this.btnUpd.UseVisualStyleBackColor = false;
-            this.btnUpd.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddBooks.BackColor = global::Library.Properties.Settings.Default.ButtonBlue;
+            this.btnAddBooks.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "Button", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddBooks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddBooks.Location = new System.Drawing.Point(180, 83);
+            this.btnAddBooks.Name = "btnAddBooks";
+            this.btnAddBooks.Size = new System.Drawing.Size(171, 74);
+            this.btnAddBooks.TabIndex = 5;
+            this.btnAddBooks.Text = "Книги";
+            this.btnAddBooks.UseVisualStyleBackColor = false;
+            this.btnAddBooks.Click += new System.EventHandler(this.btnAddBooks_Click);
             // 
             // MainForm
             // 
@@ -339,9 +341,9 @@
             this.ClientSize = new System.Drawing.Size(721, 495);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "MainColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Библиотека";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuance)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -66,6 +66,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "MainColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Information";
             this.Text = "Справка";
             this.ResumeLayout(false);

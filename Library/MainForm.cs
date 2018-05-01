@@ -12,12 +12,10 @@ namespace Library
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
-            cbBook.Refresh();
-            cbReader.Refresh();
-            dgvIssuance.Refresh();
             Filler.FillReaders(cbReader);
             Filler.FillBooks(cbBook);
             Filler.LoadDgv(dgvIssuance);
@@ -31,11 +29,6 @@ namespace Library
             dgvIssuance.Columns.Add(dgvbc);
 
         }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -74,7 +67,8 @@ namespace Library
 
         private void btnAddBooks_Click(object sender, EventArgs e)
         {
-
+            AddBook ab = new AddBook();
+            ab.ShowDialog();
         }
 
         private void dgvIssuance_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,6 +86,8 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             Filler.LoadDgv(dgvIssuance);
+            Filler.FillBooks(cbBook);
+            Filler.FillReaders(cbReader);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -104,6 +100,12 @@ namespace Library
         {
             Information i = new Information();
             i.ShowDialog();
+        }
+
+        private void btnAddReader_Click(object sender, EventArgs e)
+        {
+            AddReadership ar = new AddReadership();
+            ar.ShowDialog();
         }
     }
 }

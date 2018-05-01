@@ -22,18 +22,39 @@ namespace Library
         {
             InitializeComponent();
             this.id = id;
+            Filler.FillBooks(cbBook);
+            Filler.FillReaders(cbReader);
             cbBook.Text = b;
             cbReader.Text = r.ToString();
-            cbBook.Enabled = false;
-            cbReader.Enabled = false;
         }
 
         private void btnIssuance_Click(object sender, EventArgs e)
         {
-            string query = "update issuanceBooks set BDate = '" + dtpB.Value
+            string query = "update issuanceBooks set id_libCard = "+Convert.ToInt32(cbReader.SelectedValue)+
+                ", id_booksInfo = "+Convert.ToInt32(cbBook.SelectedValue)+", BDate = '" + dtpB.Value
                 + "', EDate = '" + dtpE.Value + "', Status = '" + cbStatus.Text + "' where id_issuanceBooks =" + id;
             Queries.ExecuteNonQuery(query);
             MessageBox.Show("Операция произведена успешно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Вы уверены, что хотите удалить запись?", "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                string query = "delete from issuanceBooks where id_issuanceBooks =" + id;
+                Queries.ExecuteNonQuery(query);
+                Filler.FillBooks(cbBook);
+                Filler.FillReaders(cbReader);
+                MessageBox.Show("Операция произведена успешно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

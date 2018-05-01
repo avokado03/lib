@@ -39,6 +39,7 @@
             this.cbReader = new System.Windows.Forms.ComboBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.btnIssuance = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,17 +56,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(13, 59);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Книга";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(12, 94);
+            this.label3.Location = new System.Drawing.Point(13, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -85,7 +87,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(12, 125);
+            this.label5.Location = new System.Drawing.Point(13, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 4;
@@ -152,18 +154,35 @@
             // 
             this.btnIssuance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIssuance.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
-            this.btnIssuance.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnIssuance.BackColor = global::Library.Properties.Settings.Default.ButtonGreen;
+            this.btnIssuance.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonGreen", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnIssuance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIssuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnIssuance.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnIssuance.Location = new System.Drawing.Point(36, 187);
+            this.btnIssuance.Location = new System.Drawing.Point(16, 184);
             this.btnIssuance.Name = "btnIssuance";
-            this.btnIssuance.Size = new System.Drawing.Size(389, 41);
+            this.btnIssuance.Size = new System.Drawing.Size(206, 41);
             this.btnIssuance.TabIndex = 10;
-            this.btnIssuance.Text = "Готово";
+            this.btnIssuance.Text = "Изменить";
             this.btnIssuance.UseVisualStyleBackColor = false;
             this.btnIssuance.Click += new System.EventHandler(this.btnIssuance_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.BackColor = global::Library.Properties.Settings.Default.ButtonRed;
+            this.btnDel.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Library.Properties.Settings.Default, "ButtonRed", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDel.Location = new System.Drawing.Point(229, 184);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(206, 41);
+            this.btnDel.TabIndex = 11;
+            this.btnDel.Text = "Удалить";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // UpdIssuance
             // 
@@ -171,6 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::Library.Properties.Settings.Default.MainColor;
             this.ClientSize = new System.Drawing.Size(447, 237);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnIssuance);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.dtpE);
@@ -205,5 +225,6 @@
         private System.Windows.Forms.ComboBox cbReader;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Button btnIssuance;
+        private System.Windows.Forms.Button btnDel;
     }
 }
